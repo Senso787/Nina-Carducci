@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Nina Carducci – Photographe professionnelle</title>
+    <meta
+      name="description"
+      content="Nina Carducci, photographe professionnelle à Bordeaux. Portraits, mariages, événements et shootings artistiques. Découvrez son portfolio et ses prestations."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script src="./assets/scripts.js" defer></script>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="top-header">
+      <h1 class="name">Nina Carducci</h1>
+
+      <nav class="nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#gallery">Galerie</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a
+              class="social-link"
+              href="https://www.instagram.com/ninacarducci.photo/?hl=fr"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram Nina Carducci (nouvelle fenêtre)"
+            >
+              <img src="assets/images/instagram.png" alt="Logo Instagram" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- CAROUSEL -->
+    <section id="header" aria-label="Photos en vedette">
+      <div class="carousel" id="carousel">
+        <img
+          id="carousel-image"
+          src="./assets/images/slider/ryoji-iwata.jpg"
+          alt="Photo d'un homme marchant sur un passage piéton"
+          fetchpriority="high"
+        />
+
+        <button
+          class="carousel-btn prev"
+          type="button"
+          aria-label="Photo précédente"
+        >
+          ‹
+        </button>
+        <button
+          class="carousel-btn next"
+          type="button"
+          aria-label="Photo suivante"
+        >
+          ›
+        </button>
+
+        <div class="carousel-dots" aria-label="Choisir une photo">
+          <button
+            class="dot active"
+            type="button"
+            data-index="0"
+            aria-label="Photo 1"
+          ></button>
+          <button
+            class="dot"
+            type="button"
+            data-index="1"
+            aria-label="Photo 2"
+          ></button>
+          <button
+            class="dot"
+            type="button"
+            data-index="2"
+            aria-label="Photo 3"
+          ></button>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="picture left">
+          <img
+            src="./assets/images/nina.jpg"
+            alt="Photo de Nina Carducci"
+            loading="lazy"
+          />
+        </div>
+
+        <div id="about-me">
+          <h2 class="about-me__title">À propos de moi</h2>
+
+          <p class="about-me__introduction">
+            Devenir photographe était pour moi une évidence. Comme si j’y étais
+            prédestinée.
+          </p>
+
+          <p>
+            Nous passons notre vie à chercher le bonheur, et lorsque nous y
+            touchons, nous n’avons qu’une envie : le figer au travers de
+            photographies pour le partager avec ceux qui comptent.
+          </p>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section id="gallery">
+        <h2 class="title">Portfolio</h2>
+
+        <div class="container py-3">
+          <div class="gallery is-hidden" aria-label="Galerie photos">
+            <img
+              data-gallery-tag="Concert"
+              class="gallery-item"
+              src="./assets/images/gallery/concerts/aaron-paul.jpg"
+              alt="Concert d'Aaron Paul"
+              loading="lazy"
+            />
+
+            <img
+              data-gallery-tag="Entreprises"
+              class="gallery-item"
+              src="./assets/images/gallery/entreprise/ali-morshedlou.jpg"
+              alt="Portrait d'Ali Morshedlou"
+              loading="lazy"
+            />
+
+            <img
+              data-gallery-tag="Entreprises"
+              class="gallery-item"
+              src="./assets/images/gallery/entreprise/jason-goodman.jpg"
+              alt="Deux femmes souriantes en milieu professionnel"
+              loading="lazy"
+            />
+
+            <img
+              data-gallery-tag="Mariages"
+              class="gallery-item"
+              src="./assets/images/gallery/mariage/hannah-busing.jpg"
+              alt="Deux mains se frôlant lors d’un mariage"
+              loading="lazy"
+            />
+
+            <img
+              data-gallery-tag="Portrait"
+              class="gallery-item"
+              src="./assets/images/gallery/portraits/ade-tunji.jpg"
+              alt="Portrait d’Ade Tunji les yeux fermés"
+              loading="lazy"
+            />
+
+            <img
+              data-gallery-tag="Mariages"
+              class="gallery-item"
+              src="./assets/images/gallery/mariage/jakob.owens.jpg"
+              alt="Couple de mariés devant un palmier"
+              loading="lazy"
+            />
+
+            <img
+              data-gallery-tag="Portrait"
+              class="gallery-item"
+              src="./assets/images/gallery/portraits/nino-van-prattenburg.jpg"
+              alt="Portrait de Nino Van Prattenburg derrière un grillage"
+              loading="lazy"
+            />
+
+            <img
+              data-gallery-tag="Concert"
+              class="gallery-item"
+              src="./assets/images/gallery/concerts/austin-neil.jpg"
+              alt="Concert d’Austin Neil"
+              loading="lazy"
+            />
+
+            <img
+              data-gallery-tag="Entreprises"
+              class="gallery-item"
+              src="./assets/images/gallery/entreprise/mateus-campos.jpg"
+              alt="Femme souriante travaillant sur un ordinateur portable"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <div class="quote">
+          <blockquote>
+            <p class="quote__text">
+              Un portrait n’est pas une ressemblance. Dès lors qu’une émotion
+              est traduite en photo, elle cesse d’être un fait pour devenir une
+              opinion.
+            </p>
+          </blockquote>
+          <p class="quote__author">— Richard Avedon</p>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="services">
+        <h2 class="title">Mes services</h2>
+
+        <div class="container services-grid">
+          <article class="service">
+            <h3>Shooting photo</h3>
+            <p>Pour capturer vos moments les plus précieux.</p>
+            <p><strong>350€ / demi-journée</strong></p>
+          </article>
+
+          <article class="service">
+            <h3>Retouches</h3>
+            <p>Optimisation professionnelle de vos photos.</p>
+            <p><strong>50€ / photo</strong></p>
+          </article>
+
+          <article class="service">
+            <h3>Album photos</h3>
+            <p>Album photo personnalisé.</p>
+            <p><strong>400€ – format A4</strong></p>
+          </article>
+        </div>
+      </section>
+
+      <div class="quote">
+        <blockquote>
+          <p class="quote__text">
+            Je guette un regard, une expression ou une nostalgie capable de
+            révéler une vie.
+          </p>
+        </blockquote>
+        <p class="quote__author">— Richard Avedon</p>
+      </div>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <h2 class="title">Contact</h2>
+
+        <div class="container contact-grid">
+          <div class="form-container">
+            <p>Une question ? Une demande de devis ?</p>
+
+            <form>
+              <label for="nom">Nom</label>
+              <input type="text" id="nom" />
+
+              <label for="email">Email</label>
+              <input type="email" id="email" />
+
+              <label for="message">Message</label>
+              <textarea id="message"></textarea>
+
+              <input type="submit" value="Envoyer" />
+            </form>
+          </div>
+
+          <div class="picture right">
+            <img
+              src="./assets/images/camera.jpg"
+              alt="Appareil photo"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <div class="lightbox-content" role="dialog" aria-modal="true">
+        <button class="lightbox-close" type="button" aria-label="Fermer">
+          ×
+        </button>
+        <button
+          class="lightbox-prev"
+          type="button"
+          aria-label="Photo précédente"
+        >
+          ‹
+        </button>
+        <img class="lightbox-image" alt="Photo agrandie" />
+        <button class="lightbox-next" type="button" aria-label="Photo suivante">
+          ›
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
