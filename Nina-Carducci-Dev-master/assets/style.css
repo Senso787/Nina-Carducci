@@ -8,6 +8,14 @@ body {
   box-sizing: border-box;
 }
 
+:root {
+  --accent: #beb45a;
+  --about: #f6d2b8;
+  --services: #a8d5d8;
+  --contact: #d8d3a8;
+  --shadow-left: #e5975f;
+}
+
 /* Helpers */
 .container {
   width: min(1100px, 92vw);
@@ -28,22 +36,19 @@ body {
   z-index: 1000;
   display: flex;
   justify-content: space-between;
-  padding-inline: 100px;
-  padding-block: 30px;
   align-items: center;
+  padding: 30px 100px;
 }
 .top-header .name {
   font-size: 26px;
 }
 .nav ul {
   display: flex;
+  gap: 20px;
   list-style-type: none;
   font-size: 14px;
   margin: 0;
   padding: 0;
-}
-.nav li {
-  padding-inline: 10px;
 }
 .nav a {
   text-decoration: none;
@@ -61,9 +66,10 @@ body {
   width: 100%;
   height: min(70vh, 560px);
   object-fit: cover;
-  display: block;
 }
-.carousel-btn {
+.carousel-btn,
+.lightbox-prev,
+.lightbox-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -71,6 +77,8 @@ body {
   background: rgba(255, 255, 255, 0.85);
   cursor: pointer;
   padding: 10px 14px;
+}
+.carousel-btn {
   font-size: 20px;
 }
 .carousel-btn.prev {
@@ -79,7 +87,6 @@ body {
 .carousel-btn.next {
   right: 12px;
 }
-
 .carousel-dots {
   position: absolute;
   bottom: 12px;
@@ -103,20 +110,9 @@ body {
 /* About */
 #about {
   display: flex;
-  background-color: #f6d2b8;
-  padding-inline: 100px;
-  padding-block: 100px;
+  background-color: var(--about);
+  padding: 100px;
   position: relative;
-}
-.picture.left::before {
-  content: " ";
-  background-color: #e5975f;
-  width: 374px;
-  height: 329px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
 }
 .picture {
   flex: 1;
@@ -126,13 +122,28 @@ body {
 .picture img {
   width: 100%;
 }
-
+.picture.left::before,
+.picture.right::before {
+  content: " ";
+  width: 374px;
+  height: 329px;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+}
+.picture.left::before {
+  left: 0;
+  background-color: var(--shadow-left);
+}
+.picture.right::before {
+  right: 0;
+  background-color: var(--accent);
+}
 #about-me {
   flex: 2;
 }
 .about-me__title {
-  margin-top: 1em;
-  margin-bottom: 60px;
+  margin: 1em 0 60px;
   font-size: 30px;
 }
 .about-me__introduction {
@@ -151,18 +162,16 @@ body {
   text-align: center;
   padding-block: 2em;
 }
-
-/* ===== TAGS ===== */
 .tags-bar {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 28px;
   margin: 16px 0 24px;
   padding: 0;
   list-style: none;
 }
-
 .tags-bar .nav-link {
   border: none;
   background: transparent;
@@ -173,17 +182,10 @@ body {
   line-height: 1;
   color: #000;
 }
-
 .tags-bar .nav-link.active-tag {
-  background: #beb45a;
+  background: var(--accent);
   color: #fff;
 }
-
-.tags-bar .nav-link:focus-visible {
-  outline: 2px solid #000;
-  outline-offset: 2px;
-}
-/* Grid responsive */
 .gallery-items-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -207,11 +209,11 @@ body {
 
 /* Quote */
 .quote {
-  font-family: "Spectral";
-  font-style: italic;
   width: min(900px, 92vw);
   margin: auto;
   padding-block: 3em;
+  font-family: "Spectral";
+  font-style: italic;
 }
 .quote__text {
   font-family: Spectral;
@@ -226,9 +228,7 @@ body {
 
 /* Services */
 #services {
-  margin: auto;
-  background-color: #a8d5d8;
-  position: relative;
+  background-color: var(--services);
   padding-bottom: 2em;
 }
 .services-grid {
@@ -240,19 +240,17 @@ body {
 .service {
   background-color: white;
   padding: 1em;
+  min-height: 260px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 260px;
 }
 
 /* Contact */
 #contact {
-  margin: auto;
-  background-color: #d8d3a8;
+  background-color: var(--contact);
   position: relative;
-  padding-inline: 100px;
-  padding-block: 100px;
+  padding: 100px;
 }
 .contact-grid {
   display: grid;
@@ -260,17 +258,6 @@ body {
   gap: 24px;
   align-items: start;
 }
-.picture.right::before {
-  content: " ";
-  background-color: #beb45a;
-  width: 374px;
-  height: 329px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
-}
-
 form {
   display: flex;
   flex-direction: column;
@@ -293,7 +280,7 @@ form textarea {
   font-size: 1.05em;
 }
 input[type="submit"] {
-  background-color: #beb45a;
+  background-color: var(--accent);
   padding: 0.5em 1em;
   cursor: pointer;
 }
@@ -312,7 +299,6 @@ input[type="submit"] {
 .lightbox.open {
   display: flex;
 }
-
 .lightbox-content {
   position: relative;
   background: #fff;
@@ -326,7 +312,6 @@ input[type="submit"] {
 .lightbox-image {
   max-width: 100%;
   max-height: 80vh;
-  display: block;
 }
 .lightbox-close {
   position: absolute;
@@ -337,50 +322,35 @@ input[type="submit"] {
   font-size: 28px;
   cursor: pointer;
 }
-.lightbox-prev,
-.lightbox-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  border: none;
-  background: rgba(255, 255, 255, 0.9);
-  cursor: pointer;
-  padding: 10px 14px;
-  font-size: 22px;
-}
 .lightbox-prev {
   left: 10px;
+  font-size: 22px;
 }
 .lightbox-next {
   right: 10px;
+  font-size: 22px;
 }
 
 /* Responsive */
 @media all and (max-width: 1180px) {
   #about,
   #contact {
-    padding-inline: 2em;
-    padding-block: 2em;
-  }
-  #about {
-    align-items: center;
+    padding: 2em;
   }
   .about-me__introduction,
   #about-me p {
     width: 100%;
   }
 }
-
 @media all and (max-width: 1000px) {
   #about {
     flex-direction: column;
+    align-items: center;
   }
   .picture {
     width: 60%;
   }
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
+  .services-grid,
   .contact-grid {
     grid-template-columns: 1fr;
   }
@@ -391,20 +361,14 @@ input[type="submit"] {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 @media all and (max-width: 650px) {
   .top-header {
     flex-direction: column;
     padding-inline: 0;
   }
-  .top-header .nav,
-  .top-header .nav ul {
+  .nav ul {
     width: 100%;
-  }
-  .top-header .nav li {
-    flex: 1;
-    padding-block: 1em;
-    text-align: center;
+    justify-content: space-around;
   }
   .gallery-items-row {
     grid-template-columns: 1fr;

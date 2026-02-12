@@ -12,12 +12,92 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap"
-      rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="./assets/style.css" />
+    <link
+      rel="stylesheet"
+      media="print"
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap"
+      onload="this.media = 'all'"
+    />
+
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap"
+      />
+    </noscript>
+    <link rel="preload" href="./assets/style.css" as="style" />
+    <link
+      rel="stylesheet"
+      href="./assets/style.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <noscript><link rel="stylesheet" href="./assets/style.css" /></noscript>
     <script src="./assets/scripts.js" defer></script>
+    <!-- RICH SNIPPET-->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Nina Carducci",
+        "description": "Photographe professionnelle à Bordeaux spécialisée en portraits, mariages et événements.",
+        "url": "https://sens0787.github.io/Nina-Carducci/",
+        "image": "https://sens0787.github.io/Nina-Carducci/assets/images/nina.jpg",
+        "priceRange": "€€",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bordeaux",
+          "addressRegion": "Nouvelle-Aquitaine",
+          "addressCountry": "FR"
+        },
+        "areaServed": {
+          "@type": "AdministrativeArea",
+          "name": "Bordeaux et environs"
+        },
+        "sameAs": ["https://www.instagram.com/ninacarducci.photo/?hl=fr"]
+      }
+    </script>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Nina Carducci – Photographe professionnelle"
+    />
+    <meta
+      property="og:description"
+      content="Photographe professionnelle à Bordeaux spécialisée en portraits, mariages et événements. Découvrez son portfolio et ses prestations."
+    />
+    <meta
+      property="og:image"
+      content="https://sens0787.github.io/Nina-Carducci/assets/images/nina.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://sens0787.github.io/Nina-Carducci/"
+    />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Nina Carducci" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Nina Carducci – Photographe professionnelle"
+    />
+    <meta
+      name="twitter:description"
+      content="Photographe professionnelle à Bordeaux spécialisée en portraits, mariages et événements."
+    />
+    <meta
+      name="twitter:image"
+      content="https://sens0787.github.io/Nina-Carducci/assets/images/nina.jpg"
+    />
   </head>
 
   <body>
@@ -107,6 +187,13 @@
 
         <div id="about-me">
           <h2 class="about-me__title">À propos de moi</h2>
+
+          <p>
+            Photographe professionnelle à <strong>Bordeaux</strong>, je réalise
+            des <strong>portraits</strong>, des <strong>shootings</strong>, des
+            reportages de <strong>mariage</strong> et des photos
+            d’<strong>événements</strong>.
+          </p>
 
           <p class="about-me__introduction">
             Devenir photographe était pour moi une évidence. Comme si j’y étais
