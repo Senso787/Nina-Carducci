@@ -1,4 +1,0 @@
-Liste des modifications à apporter au site :
--Remplacer le Jquerry par du js classique.
--Optimiser les images
--Optimiser le css
